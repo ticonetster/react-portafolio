@@ -1,0 +1,196 @@
+/**
+* Applied style to every element on the entire page.
+*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/**
+* Content of the document. 
+*/
+
+body {
+    background-color: #ededf6;
+}
+
+/**
+* Default styles for links. 
+*/
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/**
+* Default styles for paragraphs. 
+*/
+
+p {
+    font-size: 16px;
+}
+
+/**
+* Header section, includes navigation links.
+*/
+
+.header {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #31343d;
+    color: #92cccd; 
+}
+
+.links{ 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.links h1{
+    display: inline-block;
+    font-size: 48px;
+    background-color: #92cccd;
+    color: #31343d;
+    padding-left: 50px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.links ul{
+    float: right;
+    list-style-type: none;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+.links li{
+    margin-left: 25px;
+    float: left;
+    /* border-bottom: 5px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: #92cccd; */
+}
+
+.bottom{
+    display: flex;
+    justify-content: flex-end;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("../images/computer+science+header.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.bottom h2{
+    align-self: flex-end;
+    background-color: #92cccd;
+    color: #31343d;
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+
+.content {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.content h2 {
+    color: #445876;
+    padding-right: 5px;
+}
+
+.about-me{
+    display:flex;
+    padding-bottom: 20px;
+}
+
+#about-me{
+    border-right: solid #445876;
+    margin-right: 15px;
+    
+}
+.about-me h2{
+    text-align: right;
+}
+
+.projects{
+    display:flex;
+}
+
+#projects{
+    border-right: solid #445876;
+    margin-right: 15px;
+}
+.projects h2{
+    text-align: right;
+}
+
+/* .row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0 10px;
+}
+.column {
+    padding: 0 10px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    height: 150px;
+} */
+
+#big {
+    flex: 100%;
+    max-width: 100%;
+}
+#big img{
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.benefit-cost img {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+}
+
+/**
+* Bottom/footer section.
+*/
+
+.footer {
+    padding: 30px;
+    clear: both;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+.contact-me{
+    display:flex;
+    padding-bottom: 20px;
+}
+
+#contact-me{
+    border-right: solid #445876;
+    margin-right: 15px;
+    
+}
+.contact-me h2{
+    text-align: right;
+}
+
+/* img{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+} */
