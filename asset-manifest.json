@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-portfolio/static/css/main.638fffbb.css",
+    "main.js": "/react-portfolio/static/js/main.c866a6b9.js",
+    "static/js/787.a2cb61a6.chunk.js": "/react-portfolio/static/js/787.a2cb61a6.chunk.js",
+    "static/media/profile.png": "/react-portfolio/static/media/profile.1159a10df7a50bfe8292.png",
+    "static/media/weather.png": "/react-portfolio/static/media/weather.c2087a5c3b38c56ffe68.png",
+    "static/media/workDay.png": "/react-portfolio/static/media/workDay.840cf9688b43732e12bb.png",
+    "service-worker.js": "/react-portfolio/service-worker.js",
+    "static/media/password.png": "/react-portfolio/static/media/password.c9452130830da6924e08.png",
+    "static/media/tech-blog.png": "/react-portfolio/static/media/tech-blog.b0bab50715e8ae9957a2.png",
+    "static/media/quiz.png": "/react-portfolio/static/media/quiz.19c2583a930fea2cd8e9.png",
+    "static/media/resume.svg": "/react-portfolio/static/media/resume.85e1494c6b1f8ebf4435afdd7254e1fe.svg",
+    "index.html": "/react-portfolio/index.html",
+    "static/media/linkedin.svg": "/react-portfolio/static/media/linkedin.f2b4891099ee5b6fa65e2f67004348fa.svg",
+    "static/media/stack-overflow.svg": "/react-portfolio/static/media/stack-overflow.71ec6e70c47abcf26f0ed9c85f4b6942.svg",
+    "main.638fffbb.css.map": "/react-portfolio/static/css/main.638fffbb.css.map",
+    "main.c866a6b9.js.map": "/react-portfolio/static/js/main.c866a6b9.js.map",
+    "787.a2cb61a6.chunk.js.map": "/react-portfolio/static/js/787.a2cb61a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.638fffbb.css",
+    "static/js/main.c866a6b9.js"
+  ]
+}
