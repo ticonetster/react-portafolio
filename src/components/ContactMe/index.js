@@ -1,6 +1,6 @@
 import React from 'react';
-import {useForm} from 'react-hook-form'
-import emailjs from '@emailjs/browser'
+import {useForm} from 'react-hook-form';
+import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -80,7 +80,7 @@ const ContactMe = () => {
                         />
                         {errors.email && (
                             <span className='errorMessage'>Please enter a valid email address</span>
-                        )}
+                        )};
                     </div>
                     <br/>
                     <div className='form-group row justify-content-center'>

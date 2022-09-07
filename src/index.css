@@ -11,54 +11,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  /* from coolers: https://coolors.co/ */
+  --orange-soda:#F06543;
+  --platinum:#E8E9EB;
+  --alabaster:#E0DFD5;
+  --onyx:#313638;
+  --sandy-brown: #F09D51;
+
+  --cg-blue: #457695ff;
+--onyx: #353739ff;
+--light-gray: #d2d4dcff;
+--silver-metallic: #acafb5ff;
+--little-boy-blue: #4f9befff;
+  
+}
+
+ul {
+  list-style: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+
 .card {
-  background-color: var(--platinum);
-  border-radius: 5px;
-  height: 400px;
-  margin: 2rem;
-  position: relative;
+  background-color: var( --light-gray);
+  margin: 1rem;
   width: 400px;
   box-shadow: 0 2px 2px var(--onyx), 0 6px 12px var(--onyx);
 }
 
 .card .img-container {
-  height: 75%;
-  overflow: hidden;
-  text-align: center;
-  border-radius: 10px;
-  background-color: var(--platinum);
+  height: 65%;
+  background-color: var( --light-gray);
 }
 
 .card .img-container img {
   width: 100%;
-  padding: 25px;
-  margin-bottom: 20px;
-  background-color: var(--platinum);
+  padding: 15px;
+  margin-bottom: 5px;
+  background-color: var( --light-gray);
 }
 
 .card .content {
-  font-size: 18px;
-  background-color: var(--platinum);
-  color: var(--orange-soda);
-  font-weight: bold;
-  text-align: center;
+  background-color: var( --light-gray);
+  
 }
 
-#project-icon {
-  background-color: var(--platinum);
+.project-icons {
   padding: 5px;
 }
 
-#topics {
-  font-size: small;
-  font-style: italic;
-  color: var(--onyx);
+.project-title {
+  color: var(--cg-blue);
+  font-weight: bold;
+  font-size: large;
 }
 
-#card-title {
-  margin-top: 10px;
+.project-description {
   color: var(--onyx);
-  text-shadow: 1px 1px 6px var(--sandy-brown);
+  font-weight: bold;
 }
 
 .wrapper {
@@ -70,4 +84,14 @@ code {
   flex-flow: row wrap;
   padding: 10px;
   align-content: flex-start;
+}
+
+.projects {
+
+}
+.title {
+  margin: auto 30px; 
+  padding: 10px;
+  color: var(--onyx);
+  font-weight: bold;
 }

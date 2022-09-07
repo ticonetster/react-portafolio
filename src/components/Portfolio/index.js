@@ -1,6 +1,6 @@
 import React from 'react';
 // import projects from src
-import {ProjectsData} from '../../Data/projects'
+import {ProjectsData} from '../../Data/projects';
 
 function ProjectCard(props) {
     return (
@@ -38,7 +38,7 @@ function Wrapper(props) {
 function Projects () {  
     return (
     <>
-    <div className="project">
+    <div className="projects">
     <h1 className="title">Projects</h1>
     </div>
 

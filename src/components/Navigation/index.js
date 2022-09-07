@@ -28,20 +28,20 @@ const handleShow = () => setShow(true);
         <div className={style.profilePic}><img src={profile} alt="profile" /></div>
         <Offcanvas.Body className={style.canvasBody}>
           Systems Engineer with a diversified skill set including: 
-          <ul>
+          <ul className={style.aboutList}>
             <li>Full stack Software and Web development, </li>
             <li>Windows Server/Network administration, </li>
             <li> Project Management, </li>
             <li>Helpdesk Support and Troubleshooting.</li>
           </ul>
           Work experience in multiple work environments:
-          <ul>
+          <ul className={style.aboutList}>
             <li>College/Educational,</li>
             <li>Government/Military,</li>
             <li>Business/Consulting.</li>
           </ul>
         </Offcanvas.Body>
-        <h4>Socia Networks</h4>
+        <h4>Social Networks</h4>
         <Footer />
       </Offcanvas>
         <ul className={style.navUl}>

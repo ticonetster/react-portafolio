@@ -7,13 +7,16 @@
 .title {
   font-weight: 20;
   text-transform: uppercase;
-  color: #1f2226;
+  color: #313638;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin-right: 80px;
   justify-content: center;
 }
 .profilePic {
   align-self: center;
+}
+.aboutList {
+  list-style: circle;
 }
 .canvasBody {
   flex-grow: 0 !important;
