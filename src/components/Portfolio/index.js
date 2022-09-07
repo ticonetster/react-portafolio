@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 // import projects from src
 import {ProjectsData} from '../../Data/projects'
 

@@ -1,69 +1,128 @@
-import React, { useState } from 'react';
-import { validateEmail } from '../../utils/helper';
+import React from 'react';
+import {useForm} from 'react-hook-form'
+import emailjs from '@emailjs/browser'
+import { ToastContainer, toast } from 'react-toastify';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'react-toastify/dist/ReactToastify.css';
 
-function ContactMe() {
+const ContactMe = () => {
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors }
+    } = useForm();
 
-    const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-
-    const [errorMessage, setErrorMessage] = useState('');
-
-    const { name, email, message } = formState;
-
-    function handleChange(e) {
-        if (e.target.name === 'email') {
-            const isValid = validateEmail(e.target.value);
-    
-                if(!isValid) {
-                    setErrorMessage('please enter a valid email');
-                } else {
-                    setErrorMessage('');
-                }
-
-            } else {
-                if (!e.target.value.length) {
-                  setErrorMessage(`${e.target.name} is required.`);
-                } else {
-                  setErrorMessage('');
-                } 
+    // Function that displays a success toast on bottom right of the page when form submission is successful
+    const toastifySuccess = () => {
+        toast('Form sent!', {
+            position: 'bottom-right',
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            className: 'submit-feedback success',
+            toastId: 'notifyToast'
+        });
+    };
+    // Function called on submit that uses emailjs to send email of valid contact form
+    const onSubmit = async (data) => {
+        // Destrcture data object
+        const { name, email, subject, message } = data;
+        try {
+            const templateParams = { name, email, subject, message };
+            await emailjs.send(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                templateParams,
+                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+            );
+            reset();
+            toastifySuccess();
+        } catch (e) {
+            console.log(e);
         }
-
-        if (!errorMessage) {
-        setFormState({...formState, [e.target.name]: e.target.value })
-        }
-    }
-
-    function handleSubmit(e) {
-        e.preventDefault();
-    }
-
-return (
-    <section className="justify-content-center" id="contact-section">
-        <h1 data-testid='h1tag' className="contact">contact: Ticonetster</h1>
-        <hr></hr>
-        <form className="justify-content-center" id="contact-form">
+    };
+    return (
+        <section>
+            <h1 data-testid='h1tag' className="display-5">Contact: Ticonetster</h1>
+            <hr></hr>
             <div>
-                <label htmlFor="name">name:</label>
-                <input className="form-control" type="text" name="name"  defaultValue={name} onBlur={handleChange}/>
-            </div>
-            <div >
-                <label htmlFor="email">email:</label>
-                <input className="form-control" type="email"  name="email" defaultValue={email} onBlur={handleChange} />
+                <form className="col-md-4 offset-md-4" id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
+                    <div className='form-group row justify-content-center'>
+                        <input 
+                            className="form-control" 
+                            placeholder="name" 
+                            type="text" 
+                            name="name" 
+                            {...register('name', {
+                                required: { value: true, message: 'Please enter your name' },
+                                maxLength: {
+                                value: 30,
+                                message: 'Please use 30 characters or less'
+                                }
+                            })}
+                        />
+                        {errors.name && <span className='errorMessage'>{errors.name.message}</span>}
+                    </div>
+                    <br/>
+                    <div className='form-group row justify-content-center'>
+                        <input 
+                            className="form-control" 
+                            placeholder="email" 
+                            type="email"  
+                            name="email" 
+                            {...register('email', {
+                                required: true,
+                                pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                            })}
+                        />
+                        {errors.email && (
+                            <span className='errorMessage'>Please enter a valid email address</span>
+                        )}
+                    </div>
+                    <br/>
+                    <div className='form-group row justify-content-center'>
+                        <input 
+                            className="form-control" 
+                            placeholder="subject" 
+                            type="subject"  
+                            name="subject" 
+                            {...register('subject', {
+                                required: { value: true, message: 'Please enter a subject' },
+                                maxLength: {
+                                value: 75,
+                                message: 'Subject cannot exceed 75 characters'
+                                }
+                            })}
+                        />
+                        {errors.subject && (
+                            <span className='errorMessage'>{errors.subject.message}</span>
+                        )}
+                    </div>
+                    <br/>
+                    <div className='form-group row justify-content-center'>
+                        <textarea 
+                            className="form-control" 
+                            placeholder="message" 
+                            name="message" 
+                            rows="7" 
+                            {...register('message', {
+                                required: true
+                            })}
+                        />
+                        {errors.message && <span className='errorMessage'>Please enter a message</span>}
+                    </div>
+                    <div>
+                        <button className="btn btn-outline-dark mt-4" type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
             <div>
-                <label htmlFor="message">message:</label>
-                <textarea className="form-control" name="message" defaultValue={message} onBlur={handleChange} rows="7" />
-            </div> 
-            {errorMessage && (
-            <div>
-                <p className="error-text">{errorMessage}</p>
+                <ToastContainer />
             </div>
-            )}
-
-            <div>
-            <button data-testid='button' className="btn btn-outline-dark mt-4" type="submit" onSubmit={handleSubmit}>Submit</button>
-            </div>
-        </form>
-    </section>
+        </section>
     );
 }
     
