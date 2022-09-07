@@ -18,8 +18,8 @@ function ProjectCard(props) {
             </li>
             <li>
               <div className="project-icons">
-              <a href={props.github}><img src="https://img.icons8.com/ios/40/000000/github.png" alt="github-icon" id="port-icon"/></a> 
-              <a href={props.deployedapp}><img src="https://img.icons8.com/metro/35/000000/cursor.png" alt="app-icon" id="port-icon"/></a> 
+              <a href={props.github} without rel="noopener noreferrer" target="_blank"><img src="https://img.icons8.com/ios/40/000000/github.png" alt="github-icon" id="port-icon"/></a> 
+              <a href={props.deployedapp} without rel="noopener noreferrer" target="_blank"><img src="https://img.icons8.com/metro/35/000000/cursor.png" alt="app-icon" id="port-icon"/></a> 
               </div>
             </li>
             <li>
